@@ -1,0 +1,46 @@
+Last login: Wed Jul 16 22:00:47 on ttys000
+bishalmajumdar@MacBookAir ~ % vim BengaliChatbot.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+import java.time.LocalTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class BengaliChatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Type 'hi' or 'namaskar' to continue. Type 'bye' or 'abar pore kotha hobe' to exit.");
+
+        String userInput = scanner.nextLine().toLowerCase();
+
+        if (userInput.equals("bye") || userInput.equals("abar pore kotha hobe")) {
+            System.out.println("goodbye");
+            System.exit(0);
+        }
+
+        if (userInput.equals("hi") || userInput.equals("namaskar")) {
+            System.out.println("namaskar ami Asha apnar personal ai chatbot");
+            System.out.println("apnar nam ki?");
+"BengaliChatbot.java" 101L, 5658B
