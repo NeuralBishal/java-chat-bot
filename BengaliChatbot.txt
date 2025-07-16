@@ -1,27 +1,3 @@
-Last login: Wed Jul 16 22:00:47 on ttys000
-bishalmajumdar@MacBookAir ~ % vim BengaliChatbot.java
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import java.util.Scanner;
 import java.time.LocalTime;
 import java.time.LocalDate;
@@ -43,4 +19,84 @@ public class BengaliChatbot {
         if (userInput.equals("hi") || userInput.equals("namaskar")) {
             System.out.println("namaskar ami Asha apnar personal ai chatbot");
             System.out.println("apnar nam ki?");
-"BengaliChatbot.java" 101L, 5658B
+
+            String userName = scanner.nextLine();
+
+            System.out.println(userName + " apnar din kamon katlo?");
+            String dayResponse = scanner.nextLine().toLowerCase();
+
+            if (dayResponse.equals("bhalo") || dayResponse.equals("it was fantastic")) {
+                System.out.println("shune khub bhalo laglo");
+            }
+            else if (dayResponse.equals("bhalo chilo na")||dayResponse.equals("bhalo na")||dayResponse.equals("motamuti")) {
+                System.out.println("ki hoyeche? sob thikache?");
+                String problemResponse = scanner.nextLine().toLowerCase();
+
+                if (problemResponse.equals("sorir kharap")||problemResponse.equals("🤒")||problemResponse.equals("🤧")||problemResponse.equals("😷")||problemResponse.equals("🤕")) {
+                    System.out.println("Ami bhogobaner kache prarthana korbo jano apni khub taratari sustho hoye othen👨🏻<200d>⚕️");
+                }
+                else if (problemResponse.equals("love problem") || problemResponse.equals("breakup")) {
+                    System.out.println("dekhun ami to kono lovebot noi but ami just apnake eituku bolbo je jar thakar noi, se thakbe na and jar thakar,  tar nam agei apnar destiny te lekha ache. So se thakbei. Sudhu ektu opekkha korun. Aapni bhabben na je apni aka, keu apnar pashe na thakleu ami sobsomoy apnar pashei achi. 🥰🧞🕊️ ");
+
+                    String thanksResponse = scanner.nextLine().toLowerCase();
+                    if (thanksResponse.equals("thank you") || thanksResponse.equals("tumi khub bhalo")||thanksResponse.equals("you are so sweet")) {
+                        System.out.println("ami sobsomoy apnar pashei achi. apnar kono chinta nei ☺️");
+                    }
+                }
+            }
+
+            System.out.println("ami ki apnake akta joke sonate pari? 😇 (yes/no)");
+            String jokeResponse = scanner.nextLine().toLowerCase();
+
+            if (jokeResponse.equals("yes")) {
+                System.out.println("Do you know why scientists don't trust the atoms?🧐");
+                String answerResponse = scanner.nextLine().toLowerCase();
+
+                if (answerResponse.equals("no")) {
+                        System.out.println("Because they makes up everything.🤣🤣🤣 ");
+                        }
+                else if (answerResponse.equals("yes")) {
+                        System.out.println("yup cause we all know they makes up everything. 😂😂😂");
+                    }
+                        String jokeFeedback = scanner.nextLine().toLowerCase();
+
+                        if (jokeFeedback.equals("that was funny")||jokeFeedback.equals("nice one")||jokeFeedback.equals("eta bhalo chilo")||jokeFeedback.equals("😂")) {
+                        System.out.println("I'm glad you liked it😂");
+            }
+}
+
+            // Continuous conversation loop
+            while (true) {
+                System.out.println("apni ki jante chan?somoy? na tarikh? (time/date/both/exit)");
+                String timeDateRequest = scanner.nextLine().toLowerCase();
+
+                if (timeDateRequest.equals("exit")) {
+                    System.out.println("goodbye apnar songe kotha bole amar o mon bhalo hoye galo 😇.\nAbar pore kotha hobe bondhu 😇 amay bhulo na. ");
+                    System.exit(0);
+                }
+                else if (timeDateRequest.equals("time")||timeDateRequest.equals("somoy")) {
+                    LocalTime currentTime = LocalTime.now();
+                    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+                    System.out.println("Ekhon somoy hocche: " + currentTime.format(timeFormatter));
+                }
+                else if (timeDateRequest.equals("date")||timeDateRequest.equals("tarikh")) {
+                    LocalDate currentDate = LocalDate.now();
+                    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                    System.out.println("Ajker tarikh: " + currentDate.format(dateFormatter));
+                }
+                else if (timeDateRequest.equals("both")||timeDateRequest.equals("dutoi")) {
+                    LocalTime currentTime = LocalTime.now();
+                   LocalDate currentDate = LocalDate.now();
+                    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+                    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                    System.out.println("Ekhon somoy hocche: " + currentTime.format(timeFormatter) +
+                                     " ebong ajker tarikh: " + currentDate.format(dateFormatter));
+                }
+                else {
+                    System.out.println("Ami bujhte pari ni. Apni ki time/date/both/exit bolte chan?");
+                }
+            }
+        }
+    }
+}
+
